@@ -1,0 +1,35 @@
+feeder:
+  push_address: tcp://*:8000
+  sub_date: 0
+  sub_time: 0
+  wal: wal:///../data/feed.stock.wal?keep=100
+  enable_trace: true
+  enable_spot: true
+  enable_future: true
+  enable_option: true
+  enable_order: true
+  enable_knock: true
+  enable_queue: false
+  holo_sz_cycle: 0
+  holo_sh_cycle: 0
+  holo_threads: 0
+
+# 股票测试环境
+wind:
+  #东吴行情, 双活模式, 使用tdfapi-3.3.0 Release版本, 但有个问题, api的日期不对, 然后Reconnect, 导致崩溃, 无解, 测试时注释掉WindServer::Instance()->Reconnect()
+  server_host: 58.210.86.54
+  # 10001端口是回放历史数据，sub_date需要设置为 20230328; 10003是实时端口
+  server_port: 10003
+  username: pingfan
+  password: .pingfan
+  # 订阅市场，e.g. SH-1-1;SH-2-0;SZ-2-0;
+  sub_market: SH-2-0;
+  #double_flag 设置为0, 单活模式; 1, 双活模式
+  double_flag: 0
+  server_host_1: 58.210.86.54
+  server_port_1: 10009
+  username_1: pingfan123
+  password_1: .123456123
+  sub_date_list:
+
+
