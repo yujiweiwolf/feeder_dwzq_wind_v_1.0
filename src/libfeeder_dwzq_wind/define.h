@@ -2,7 +2,7 @@
 
 namespace co {
 
-	const string kVersion = "v4.1.12";
+	const string kVersion = "v4.1.13";
 
 	// 每收到一条股票行情数据，执行如下检查：行情时间>=9:25:00，成交量=0，买一量=0，卖一量=0，将状态置为停牌。
 	constexpr int kFixSecurityStatusBeginTime = 92500000;

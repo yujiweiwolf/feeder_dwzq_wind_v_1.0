@@ -69,7 +69,7 @@ namespace co {
 	int8_t WindMarket2Std(const string& tdf_market) {
 		// 内部市场代码， 0-未知 1-上海 2-深圳 3-上海B 4-深圳B 5-中金所 6-上期所 7-大商所 8-郑商所 9-特转A 10-特转B, 11-三板
 		// 宏汇市场代码：[SH]上海，[SZ]深圳，[CF]中金所，[SHF]上期所，[CZC]郑商所，[DCE]大商所
-		static map<string, int8_t> d = { {"SH", 1},{"SH-1-1", 1},{"SH-2-0", 1},{"SZ", 2},{"SZ-1-1", 2},{"SZ-2-0", 2},{"CF", 5},{"SHF", 6},{"CZC", 8},{"DCE", 7}};
+		static map<string, int8_t> d = { {"SH", 1},{"SH-1-1", 1},{"SH-2-0", 1},{"SZ", 2},{"SZ-1-1", 2},{"SZ-2-0", 2},{"BJ-1-0", 3},{"CF", 5},{"SHF", 6},{"CZC", 8},{"DCE", 7}};
 		map<string, int8_t>::iterator itr = d.find(tdf_market);
 		int ret = itr != d.end() ? itr->second : 0;
 		if (ret == 0) {

@@ -176,6 +176,9 @@ namespace co {
             static_tick.code = wind_code;
             co::fbs::QTickT& tick = ctx->tick();
             tick.name = name;
+            std::string wind_market = tdf_code.szMarket;
+            int64_t std_market = WindMarket2Std(wind_market);
+            tick.market = std_market;
             bool is_index = ((type & 0xF0) == 0x00) ? true : false;
             if (is_index) {
                 // 对于指数代码，代码表中的代码为真实代码（000300.SH， 000001.SH），但是行情中的代码有两种情况：
@@ -467,7 +470,7 @@ namespace co {
                            << pData->szMarket[i] << ", codes size: " << pData->nCodeCount[i] << ", date: " << pData->nCodeDate[i];
                         std::string wind_market = pData->szMarket[i];
                         int64_t std_market = WindMarket2Std(wind_market);
-                        if (std_market != co::kMarketSH && std_market != co::kMarketSZ) {
+                        if (std_market != co::kMarketSH && std_market != co::kMarketSZ && std_market != co::kMarketBJ) {
                             // 忽略非沪深交易所的代码表
                             continue;
                         }
