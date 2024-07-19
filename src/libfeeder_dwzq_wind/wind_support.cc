@@ -363,6 +363,7 @@ namespace co {
 			m.lower_limit = i2f(p->nLowLimited); // 跌停价
 			m.pre_settle = i2f(p->nPreSettlePrice); // 昨结算
 			m.pre_open_interest = p->iPreOpenInterest; // 昨持仓量
+            m.price_step = 0.0001;
 			// m.multiple = 0; // 合约乘数
 			// m.price_step = 0; // 最小报价单位
 			// m.create_date = 0; // 创建日
